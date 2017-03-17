@@ -1,0 +1,25 @@
+// ------------------------------
+// About
+// ------------------------------
+
+#nameOrigin {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	margin-bottom: 40px;
+	img {
+		width: 180px;
+		height: 180px;
+	}
+	p {
+		font-family: $serif-font;
+		font-weight: lighter;
+		align-self: center;
+		font-size: 2em;
+		line-height: 1.3em;
+		margin: 0 0 0 40px;
+		> span {
+			color: $cyan;
+		}
+	}
+}
