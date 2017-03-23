@@ -6,7 +6,11 @@
   <li style="background: url({{image}}) center/cover no-repeat;"><a href="{{url}}" title="Read more about '{{title}}'" class="listlink">
     <time datetime="{{date format="DD MMM YYYY"}}">{{date format="YYYY/MM/DD"}}</time>
     {{title}}
-	<span class="post tags">{{tags separator=" " autolink="false" from="2"}}</span>
+	<span class="post tags">
+	  {{#foreach tags}}
+        <span>#{{name}}</span>
+      {{/foreach}}
+	</span>
   </a></li>
   {{/foreach}}
 </ol>
