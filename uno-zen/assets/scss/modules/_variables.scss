@@ -29,12 +29,12 @@ $mark-color            : #feda9e;
 $divider-color         : rgba(255, 255, 255, .14);
 
 /* FONT */
+@import url('https://fonts.googleapis.com/css?family=Cuprum|Gudea');
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
 $unit                  : 1rem;
 
-$sans-font             : 'Raleway', sans-serif;
-//$serif-font            : 'Roboto Slab', serif;
-$serif-font				: 'Avenir Next Condensed', serif;
+$sans-font             : 'Gudea', sans-serif;
+$serif-font				: 'Cuprum', sans-serif;
 $code-font             : Consolas, "Liberation Mono", Menlo, Courier, monospace;
 $quote-font            : "freight-text-pro", Georgia, Cambria, "Times New Roman", Times, serif;
 $symbol-font		   : 'Source Sans Pro', sans-serif;

@@ -1,13 +1,13 @@
 {{!< default}}
 
-<h1 style="text-align: center;">Tag: {{tag.name}}.</h1>
+<h1 style="text-align: center; text-transform: capitalize;">{{tag.name}}</h1>
 <ol id="posts-list">
   {{#foreach posts}}
-  <li>
-    <time datetime="{{date format="DD MMM YYYY"}}">{{date format="DD MMM YYYY"}}</time>
-    <a href="{{url}}" title="Read more about '{{title}}'">{{title}}</a>
-    <span class="post tags">{{tags separator=" "}}</span>
-  </li>
+  <li style="background: url({{image}}) center/cover no-repeat;"><a href="{{url}}" title="Read more about '{{title}}'" class="listlink">
+    <time datetime="{{date format="DD MMM YYYY"}}">{{date format="YYYY/MM/DD"}}</time>
+    {{title}}
+	<span class="post tags">{{tags separator=" " autolink="false" from="2"}}</span>
+  </a></li>
   {{/foreach}}
 </ol>
 

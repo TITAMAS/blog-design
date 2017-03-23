@@ -3,7 +3,6 @@
   <head>
     <title>{{meta_title}}</title>
     {{> meta}}
-    <link href='https://fonts.googleapis.com/css?family=Raleway:400,600%7CRoboto+Slab:300,400' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="{{asset "css/uno-zen.css"}}" />
     {{ghost_head}}
   </head>
@@ -22,7 +21,13 @@
 
     {{ghost_foot}}
 
-    <script src="{{asset "js/uno-zen.common.js"}}" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+	  if (typeof jQuery == 'undefined') {
+	    document.write('<script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js"></'+'script>');
+	  }
+	</script>
+	<script src="{{asset "js/uno-zen.common.js"}}" type="text/javascript" charset="utf-8"></script>
+    <script src="{{asset "js/unique.js"}}" type="text/javascript" charset="utf-8"></script>
     {{#is "post, page"}}
       <script src="{{asset "js/uno-zen.post.js"}}" type="text/javascript" charset="utf-8"></script>
     {{/is}}

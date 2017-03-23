@@ -2,6 +2,12 @@
 // BASICS
 // ------------------------------
 
+* {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
 html {
   font-size: $unit * 1.125;
   height: 100%;
@@ -28,12 +34,17 @@ mark {
   border-radius: 3px;
 }
 
+
 ::selection {
   background: lighten($secondary-color, 26%);
 }
 
 hr {
   border: 0;
+}
+
+.is-hidden {
+	display: none;
 }
 
 // ------------------------------
@@ -57,21 +68,17 @@ h3,
 h4,
 h5,
 h6 {
-  color: $gray-darkest;
-  font-family: $serif-font;
-  -webkit-font-smoothing: antialiased;
-  font-weight: lighter;
+	color: $gray-darkest;
+	font-family: $serif-font;
+	-webkit-font-smoothing: antialiased;
 }
 
 h1 {
-  font-size: $font-h1;
-  line-height: $line-height * 1.75;
-  margin: $margin-h1 0;
-}
-.page {
-	h1 {
-		color: $red;
-	}
+	font-size: $font-title;
+	line-height: $line-height * 1.75;
+	margin: $margin-h1 0;
+	color: $red;
+	font-weight: bold;
 }
 
 h2 {
@@ -222,10 +229,11 @@ main {
 article.page {
 	section {
 		padding: 2rem;
-		&:nth-child(odd) {
-			background: #FAFAFA;
-		}
 	}
+}
+
+article.post {
+	padding: 2rem;
 }
 
 .divider {

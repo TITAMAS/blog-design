@@ -5,17 +5,18 @@
   <article class="{{post_class}}">
     <header>
       <div class="post meta">
-        <time datetime="{{date format="YYYY-MM-DDTHH:MM"}}">{{date format="DD MMM YYYY"}}</time>
-        <span class="post tags">{{tags prefix="in " separator=" "}}</span>
+        <time datetime="{{date format="YYYY-MM-DDTHH:MM"}}">{{date format="YYYY/MM/DD"}}</time>
+        <!--<span class="post tags">{{tags prefix="in " separator=" "}}</span>-->
 
         {{!> post-author}}
 
         <span class="post reading-time"> ~ <span></span> read.</span>
       </div>
-      <a title="Tweet '{{title}}'" href="https://twitter.com/intent/tweet?text={{encode title}}{{encode ' »'}}&amp;hashtags={{tags separator="," autolink="false"}}&amp;url={{url absolute="true"}}">
-        {{#if image}}<img id="post-image" src="{{image}}" alt="{{title}}">{{/if}}
-        <h1 class="icon-reverse icon-social-twitter-post" id="post-title">{{title}}</h1>
-      </a>
+	  <h1 id="post-title">{{title}}</h1>
+	  <div id="post-social">
+		<a title="Tweet '{{title}}'" href="https://twitter.com/intent/tweet?text={{encode title}}{{encode ' »'}}&amp;hashtags={{tags separator="," autolink="false"}}&amp;url={{url absolute="true"}}" class="icon-reverse icon-social-twitter-post" target="_blank"></a>
+		<!--<a title="Tweet '{{title}}'" href="https://twitter.com/intent/tweet?text={{encode title}}{{encode ' »'}}&amp;hashtags={{tags separator="," autolink="false"}}&amp;url={{url absolute="true"}}" class="icon-reverse icon-social-twitter-post"></a>-->
+	  </div>
     </header>
 
     <div id="post-content" class="{{post_class}}">
@@ -24,8 +25,10 @@
 
     <div class="post related">
       {{#prev_post}}
-        <a rel="prev" id="prev-btn" class="btn small square" href="{{url}}">← {{title}}</a>
-      {{/prev_post}}
+	  	{{#has tag="{{tag}}"}}
+        	<a rel="prev" id="prev-btn" class="btn small square" href="{{url}}">← {{title}}</a>
+		{{/has}}
+	  {{/prev_post}}
 
       {{#next_post}}
         <a rel="next" id="next-btn" class="btn small square" href="{{url}}">{{title}} →</a>

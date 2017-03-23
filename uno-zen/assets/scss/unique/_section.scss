@@ -23,3 +23,23 @@
 		}
 	}
 }
+
+// ------------------------------
+// contact
+// ------------------------------
+
+#contactForm {
+	.form-group {
+		margin-bottom: 8px;
+		label {
+			&.title {
+				display: inline-block;
+				min-width: 160px;
+				vertical-align: top;
+			}
+		}
+		p {
+			margin-bottom: 0;
+		}
+	}
+}

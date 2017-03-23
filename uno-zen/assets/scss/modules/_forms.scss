@@ -2,32 +2,97 @@
   outline: none;
 }
 
-input[type="text"],
-input[type="password"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="date"],
-input[type="month"],
-input[type="time"],
-input[type="week"],
-input[type="number"],
-input[type="email"],
-input[type="url"],
-input[type="search"],
-input[type="tel"] {
-  background: $gray-lightest;
-  border: 1px solid $gray-light;
-  border-radius: $border-radius;
-  color: $gray-darker;
-  font-size: .9em;
-  padding: 1em;
-  width: 240px;
+input:not([type="submit"]):not([type="radio"]),
+textarea {
+	outline: none;
+	background: $gray-lightest;
+	border: 1px solid $gray-light;
+	border-radius: $border-radius;
+	color: $gray-darker;
+	font-size: .9em;
+	padding: .8em;
+	line-height: 1.6em;
+	font-family: $sans-font;
 
-  @include placeholder {
-    color: $gray;
-  }
+	@include placeholder {
+		color: $gray;
+	}
 
-  &:focus {
-    border-color: $secondary-color;
-  }
+	&:focus {
+		border-color: $red;
+	}
+}
+
+input:not([type="submit"]):not([type="radio"]) {
+	width: 240px;
+}
+textarea {
+	width: 620px;
+}
+
+.inputs {
+	display: inline-block;
+	max-width: 620px;
+}
+
+
+::-webkit-input-placeholder {
+	color: #BABABA;
+	font-style: italic;
+}
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+	color: #BABABA;
+	font-style: italic;
+}
+
+input[type=radio] {
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+}
+
+input[type=submit], input[type=button] {
+	margin: 20px auto;
+	padding: 0;
+	display: table;
+	text-decoration: none;
+	text-align: center;
+	font-family: $serif-font;
+	font-size: 20px;
+	border-radius: $border-radius;
+	border: 1px solid $gray-light;
+	background-color: rgba(#fff, .5);
+	width: 200px;
+	height: 56px;
+	line-height: 56px;
+	transition: .3s all;
+	text-shadow: 1px 1px 1px #fff;
+	box-sizing: border-box;
+	&:visited {
+		color: inherit;
+	}
+	&:hover, &:active, &:focus {
+		cursor: pointer;
+		color: #fff;
+		border: 1px solid $red;
+		background: $red;
+		text-shadow: none;
+	}
+}
+
+.alert {
+	display: table;
+	margin: 0 auto 20px;
+	padding: 0 12px;
+}
+
+.alert--loading {
+	background: linear-gradient(transparent 60%, #CCC 60%);
+}
+.alert--success {
+	background: linear-gradient(transparent 60%, $cyan 60%);
+}
+.alert--error {
+	background: linear-gradient(transparent 60%, #DD0000 60%);
 }

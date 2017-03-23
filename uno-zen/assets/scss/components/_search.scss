@@ -1,3 +1,8 @@
+#search-container {
+	position: relative;
+}
+
+
 #search-form {
   padding: .25rem 0;
 }
@@ -8,6 +13,7 @@
   padding: 4% 5px 4% 18px;
   transition: border .3s ease-in;
   border-radius: 1.68rem;
+  position: relative;
 
   &:focus,
   &:hover {
@@ -55,9 +61,8 @@
 }
 
 .icon-search {
-  position: absolute;
-  top: 31.5rem;
-  left: 16.5rem;
-  color: $gray;
-  text-shadow: 1px 1px 0 $gray;
+	position: absolute;
+	top: 31.5rem;
+	left: 16.5rem;
+	color: $gray;
 }
