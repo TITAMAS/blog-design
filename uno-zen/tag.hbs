@@ -1,18 +1,19 @@
 {{!< default}}
+<div class="{{tag.name}}">
+	<h1 style="text-align: center; text-transform: capitalize;">{{tag.name}}</h1>
+	<ol id="posts-list">
+	  {{#foreach posts}}
+	  <li style="background: url({{image}}) center/cover no-repeat;"><a href="{{url}}" title="Read more about '{{title}}'" class="listlink">
+	    <time datetime="{{date format="DD MMM YYYY"}}">{{date format="YYYY/MM/DD"}}</time>
+	    {{title}}
+		<span class="post tags">
+		  {{#foreach tags}}
+	        <span>#{{name}}</span>
+	      {{/foreach}}
+		</span>
+	  </a></li>
+	  {{/foreach}}
+	</ol>
 
-<h1 style="text-align: center; text-transform: capitalize;">{{tag.name}}</h1>
-<ol id="posts-list">
-  {{#foreach posts}}
-  <li style="background: url({{image}}) center/cover no-repeat;"><a href="{{url}}" title="Read more about '{{title}}'" class="listlink">
-    <time datetime="{{date format="DD MMM YYYY"}}">{{date format="YYYY/MM/DD"}}</time>
-    {{title}}
-	<span class="post tags">
-	  {{#foreach tags}}
-        <span>#{{name}}</span>
-      {{/foreach}}
-	</span>
-  </a></li>
-  {{/foreach}}
-</ol>
-
-{{pagination}}
+	{{pagination}}
+</div>

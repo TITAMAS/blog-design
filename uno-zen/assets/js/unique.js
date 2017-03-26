@@ -12,7 +12,7 @@ $(function(){
    	$contactForm.submit(function(e) {
    	e.preventDefault();
    	$.ajax({
-   		url: 'https://formspree.io/mm.mocha.t@gmail.com',
+   		url: 'https://formspree.io/media.lab.titech@gmail.com',
    		type: 'POST',
    		data: $(this).serialize(),
    		dataType: 'json',
