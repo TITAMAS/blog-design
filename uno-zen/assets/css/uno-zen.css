@@ -342,14 +342,21 @@ main {
   right: 0;
   top: 0;
   font-size: 16px; }
-  main > .content > h1 {
-    margin-bottom: 2.7rem; }
-  main > .content > footer {
-    border-top: 1px solid #ddd;
-    color: #b3b3b3;
-    display: block;
-    font-size: .7em;
-    padding: 2em 0 0; }
+  main > .content {
+    min-height: 100%;
+    height: 100%; }
+    main > .content > h1 {
+      margin-bottom: 2.7rem; }
+
+footer {
+  width: 100%;
+  color: #b3b3b3;
+  display: block;
+  font-size: 9px;
+  padding: 2em 0 0;
+  position: absolute;
+  left: 0;
+  bottom: 0; }
 
 article.page section {
   padding: 2rem; }
@@ -1836,22 +1843,19 @@ body[data-page="error"] {
   margin: 0;
   list-style-type: none;
   margin-bottom: 1.25rem; }
-  #posts-list.top-posts {
-    display: flex;
-    flex-wrap: wrap; }
-    #posts-list.top-posts > li {
-      width: 50%; }
   #posts-list > li {
     margin: 0;
     background-size: cover;
     height: 240px;
-    position: relative; }
+    position: relative;
+    background-color: black; }
     #posts-list > li > a.listlink {
       color: #fff;
       padding: 20px 40px;
-      height: 240px;
+      height: 100%;
       display: block;
-      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2); }
+      font-size: 24px;
+      text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5); }
       #posts-list > li > a.listlink:hover, #posts-list > li > a.listlink:focus {
         color: #fff;
         background-color: rgba(255, 255, 255, 0.2); }
@@ -1863,18 +1867,36 @@ body[data-page="error"] {
       color: #fff;
       font-size: 10px;
       letter-spacing: 2px;
-      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2); }
+      text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5); }
       #posts-list > li time:hover, #posts-list > li time:focus {
         color: #fff; }
-    #posts-list > li .tags {
-      position: absolute;
-      left: 40px;
-      bottom: 20px;
-      color: #fff;
-      font-size: 12px;
-      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2); }
     #posts-list > li span > a {
       bottom: 2px; }
+    #posts-list > li.top-posts {
+      margin: 0;
+      height: 100%; }
+      #posts-list > li.top-posts > li {
+        width: 100%;
+        height: 50%; }
+        #posts-list > li.top-posts > li > a.listlink {
+          font-size: 32px; }
+
+.tags {
+  letter-spacing: .05rem;
+  font-size: 12px; }
+  .tags .tag {
+    margin-right: 4px; }
+
+#posts-list .tags {
+  position: absolute;
+  left: 40px;
+  bottom: 20px;
+  color: #fff;
+  text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5); }
+
+.meta .tags {
+  display: inline;
+  margin-left: 8px; }
 
 #post-content a.title-link {
   color: #ad0000; }
