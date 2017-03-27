@@ -17,7 +17,7 @@
   #post-content a:hover:not(.title-link), #post-content a:active:not(.title-link) {
     outline: 0; }
 
-.cover.container, body[data-page="error"] {
+body[data-page="error"] {
   background: linear-gradient(150deg, rgba(95, 44, 130, 0.1) 30%, rgba(73, 160, 157, 0.2) 70%) 0 0/cover fixed; }
 
 .cover.container, body[data-page="error"] > article {
@@ -208,7 +208,7 @@ mark {
   border-radius: 3px; }
 
 ::selection {
-  background: #ffe28c; }
+  background: #8adfdf; }
 
 hr {
   border: 0; }
@@ -299,6 +299,9 @@ blockquote {
 
 .center {
   text-align: center; }
+  @media (max-width: 479px) {
+    .center {
+      text-align: left; } }
 
 ol,
 ul {
@@ -358,11 +361,8 @@ footer {
   left: 0;
   bottom: 0; }
 
-article.page section {
-  padding: 2rem; }
-
 article.post {
-  padding: 2rem; }
+  padding: 20px 40px; }
 
 .divider {
   border-top: 1px solid rgba(255, 255, 255, 0.14);
@@ -1369,9 +1369,15 @@ textarea {
 
 input:not([type="submit"]):not([type="radio"]) {
   width: 240px; }
+  @media (max-width: 479px) {
+    input:not([type="submit"]):not([type="radio"]) {
+      width: 100%; } }
 
 textarea {
   width: 620px; }
+  @media (max-width: 479px) {
+    textarea {
+      width: 100%; } }
 
 .inputs {
   display: inline-block;
@@ -1397,8 +1403,8 @@ input[type=submit], input[type=button] {
   display: table;
   text-decoration: none;
   text-align: center;
-  font-family: "Cuprum", sans-serif;
-  font-size: 20px;
+  font-family: "Gudea", sans-serif;
+  font-size: 16px;
   border-radius: 3px;
   border: 1px solid #ddd;
   background-color: rgba(255, 255, 255, 0.5);
@@ -1416,6 +1422,11 @@ input[type=submit], input[type=button] {
     border: 1px solid #930000;
     background: #930000;
     text-shadow: none; }
+  @media (max-width: 479px) {
+    input[type=submit], input[type=button] {
+      width: 100%;
+      border: 1px solid #930000;
+      color: #930000; } }
 
 .alert {
   display: table;
@@ -1872,16 +1883,17 @@ body[data-page="error"] {
         color: #fff; }
     #posts-list > li span > a {
       bottom: 2px; }
-    #posts-list > li.top-posts {
-      margin: 0;
-      height: 100%; }
-      #posts-list > li.top-posts > li {
-        width: 100%;
-        height: 50%; }
-        #posts-list > li.top-posts > li > a.listlink {
-          font-size: 32px; }
+  #posts-list.top-posts {
+    margin: 0;
+    height: 100%; }
+    #posts-list.top-posts > li {
+      width: 100%;
+      height: 50%; }
+      #posts-list.top-posts > li > a.listlink {
+        font-size: 32px; }
 
 .tags {
+  margin: 0;
   letter-spacing: .05rem;
   font-size: 12px; }
   .tags .tag {
@@ -2057,6 +2069,15 @@ body[data-page="error"] {
 
 @media all and (max-width: 1024px) {
   /* disabling element, too much information*/
+  header#fixed-header {
+    height: 56px;
+    width: 100%;
+    position: fixed;
+    background: #000;
+    z-index: 1800; }
+  aside {
+    min-height: 100%;
+    height: 100%; }
   .pace,
   span.post.tags,
   .post.reading-time,
@@ -2065,44 +2086,55 @@ body[data-page="error"] {
   #search-container {
     display: none !important; }
   /* Enable element special for little devices */
+  #avatar-link {
+    display: block; }
   #profile-resume {
     display: inherit; }
   /* off canvas */
   #menu-button {
     position: fixed;
-    top: .5rem;
-    left: 13.5rem;
-    z-index: 2;
+    top: 0;
+    left: 12.85rem;
+    z-index: 2000;
     display: block;
+    background: #000;
+    padding: 8px;
     transition: all 350ms; }
     #menu-button.expanded {
-      left: .85rem; }
-    #menu-button > a > i {
-      color: #ad0000; }
+      background: #fff;
+      left: 0;
+      height: 56px; }
+    #menu-button > a {
+      display: block; }
+      #menu-button > a > i {
+        color: #930000;
+        padding: 0 8px; }
   .cover {
-    width: 16rem;
-    transition: width 350ms cubic-bezier(0.645, 0.045, 0.355, 1), transform 350ms cubic-bezier(0.645, 0.045, 0.355, 1), border-right 630ms cubic-bezier(0.645, 0.045, 0.355, 1), box-shadow 630ms cubic-bezier(0.645, 0.045, 0.355, 1);
-    transform: translate3d(-16rem, 0, 0);
+    width: 0;
+    transition: width 350ms cubic-bezier(0.645, 0.045, 0.355, 1), transform 350ms cubic-bezier(0.645, 0.045, 0.355, 1), box-shadow 630ms cubic-bezier(0.645, 0.045, 0.355, 1);
     border-right: 0;
     box-shadow: none; }
     .cover.expanded {
       width: 16rem;
       transform: translate3d(0, 0, 0);
       border-right: 1px solid #ccc;
-      box-shadow: 11px -10px 1px -9px #ddd; }
+      box-shadow: 11px -10px 1px -9px #ddd;
+      max-height: 100vh; }
     .cover.animated {
       transition: all 350ms; }
   .profile {
     width: 100%;
-    height: 100%;
     max-width: 100%; }
     .profile.contact > nav {
       padding: 0; }
     .profile > a > img {
-      width: 8rem;
+      width: 6rem;
       margin-bottom: 1rem; }
     .profile > a > h1 {
       margin: 0; }
+    .profile > a #profile-title {
+      font-size: 1.1em;
+      line-height: 32px; }
     .profile > p {
       display: none; }
     .profile .divider {
@@ -2111,13 +2143,15 @@ body[data-page="error"] {
     margin-top: 1.2rem;
     margin-bottom: 1rem; }
     .navigation.left .links > li {
-      margin: 0; }
+      margin: 0;
+      width: 100% !important;
+      text-align: right !important;
+      border-top: .5px solid #333; }
+      .navigation.left .links > li:last-child {
+        border-bottom: .5px solid #333; }
       .navigation.left .links > li > a {
         padding: .85rem 1.25rem;
         font-size: 1rem; }
-  #avatar-link {
-    display: inline-block;
-    margin-top: 4rem; }
   .navigation {
     width: 100%; }
     .navigation.right {
@@ -2125,19 +2159,22 @@ body[data-page="error"] {
     .navigation.left .links.item {
       width: 100%; }
   main {
+    width: 100vw;
+    height: 100vh;
+    padding-top: 56px;
     left: 0;
     transition: all 350ms;
     transform: translate3d(0, 0, 0); }
     main.expanded {
-      transform: translate3d(14rem, 0, 0); } }
+      transform: translate3d(14rem, 0, 0); }
+  article.post {
+    padding: 0 5%; } }
 
 @media all and (max-width: 480px) {
   .post .tags,
   .post .meta > time,
   .pagination > span {
     display: none; }
-  main {
-    padding: 1rem 0; }
   .btn {
     display: block;
     margin-bottom: .4em; }
@@ -2161,15 +2198,22 @@ body[data-page="error"] {
   #posts-list {
     margin: 3rem 0;
     text-align: center; }
-    #posts-list > li {
-      margin-bottom: 2rem; }
-      #posts-list > li > time {
-        display: block;
-        float: none;
-        letter-spacing: 1px;
-        padding: 0; }
+    #posts-list > li > time {
+      display: block;
+      float: none;
+      letter-spacing: 1px;
+      padding: 0; }
   #post-title {
-    margin: 2.5rem 0; } }
+    margin: 2.5rem 0; }
+  #nameOrigin {
+    display: table !important;
+    text-align: center; }
+    #nameOrigin img {
+      width: 150px;
+      height: 150px; }
+    #nameOrigin p {
+      margin: 0 !important;
+      font-size: 1.4em !important; } }
 
 html.expanded .navigation.left .links > li {
   width: auto; }

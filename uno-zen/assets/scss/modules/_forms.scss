@@ -25,9 +25,15 @@ textarea {
 
 input:not([type="submit"]):not([type="radio"]) {
 	width: 240px;
+	@include mq-sp {
+		width: 100%;
+	}
 }
 textarea {
 	width: 620px;
+	@include mq-sp {
+		width: 100%;
+	}
 }
 
 .inputs {
@@ -58,8 +64,8 @@ input[type=submit], input[type=button] {
 	display: table;
 	text-decoration: none;
 	text-align: center;
-	font-family: $serif-font;
-	font-size: 20px;
+	font-family: $sans-font;
+	font-size: 16px;
 	border-radius: $border-radius;
 	border: 1px solid $gray-light;
 	background-color: rgba(#fff, .5);
@@ -78,6 +84,12 @@ input[type=submit], input[type=button] {
 		border: 1px solid $red;
 		background: $red;
 		text-shadow: none;
+	}
+
+	@include mq-sp {
+		width: 100%;
+		border: 1px solid $red;
+		color: $red;
 	}
 }
 

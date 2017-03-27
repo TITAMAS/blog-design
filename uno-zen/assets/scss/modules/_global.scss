@@ -9,38 +9,38 @@
 }
 
 html {
-  font-size: $unit * 1.125;
-  height: 100%;
-  max-height: 100%;
+	font-size: $unit * 1.125;
+	height: 100%;
+	max-height: 100%;
 
-  &.expanded {
-    overflow-y: hidden;
-  }
+	&.expanded {
+		overflow-y: hidden;
+	}
 }
 
 html,
 body {
-  height: 100%;
+	height: 100%;
 }
 
 body {
-  color: $gray-darkest;
-  font-family: $sans-font;
+	color: $gray-darkest;
+	font-family: $sans-font;
 }
 
 mark {
-  background: $mark-color;
-  padding: .05em .2em;
-  border-radius: 3px;
+	background: $mark-color;
+	padding: .05em .2em;
+	border-radius: 3px;
 }
 
 
 ::selection {
-  background: lighten($secondary-color, 26%);
+	background: lighten($cyan, 26%);
 }
 
 hr {
-  border: 0;
+	border: 0;
 }
 
 .is-hidden {
@@ -52,14 +52,14 @@ hr {
 // ------------------------------
 
 a {
-  color: $link-color;
-  position: relative;
-  text-decoration: none;
-  transition: all $aside-animation-time;
+	color: $link-color;
+	position: relative;
+	text-decoration: none;
+	transition: all $aside-animation-time;
 
-  &:hover {
-    color: $hover-color;
-  }
+	&:hover {
+		color: $hover-color;
+	}
 }
 
 h1,
@@ -82,75 +82,78 @@ h1 {
 }
 
 h2 {
-  font-size: $font-h2;
-  margin: $margin-h2 0;
+	font-size: $font-h2;
+	margin: $margin-h2 0;
 }
 
 h3 {
-  font-size: $font-h3;
-  margin: $margin-h3 0;
+	font-size: $font-h3;
+	margin: $margin-h3 0;
 }
 
 h4 {
-  font-size: $font-h4;
-  margin: $margin-h4 0;
+	font-size: $font-h4;
+	margin: $margin-h4 0;
 }
 
 h5 {
-  font-size: $font-h5;
-  margin: $margin-h5 0;
+	font-size: $font-h5;
+	margin: $margin-h5 0;
 }
 
 h6 {
-  font-size: $font-h6;
-  margin: $margin-h6 0;
+	font-size: $font-h6;
+	margin: $margin-h6 0;
 }
 
 p {
-  line-height: $line-height;
-  margin-bottom: 1.3rem;
+	line-height: $line-height;
+	margin-bottom: 1.3rem;
 }
 
 strong {
-  font-weight: bold;
+	font-weight: bold;
 }
 
 em {
-  font-style: italic;
+	font-style: italic;
 }
 
 blockquote {
-  border-left: $gray-darkest .25rem solid;
-  margin: 2rem 0;
-  padding: 0 0 0 1.5rem;
+	border-left: $gray-darkest .25rem solid;
+	margin: 2rem 0;
+	padding: 0 0 0 1.5rem;
 
-  > p {
-    font-family: $quote-font;
-    -webkit-font-smoothing: antialiased;
-    font-style: italic;
-    letter-spacing: .01rem;
-    word-wrap: break-word;
-  }
-
-  &.catchcopy {
-	border: none;
-	margin: 0 auto 20px;
-	padding: 0;
-	font-size: 1.4em;
-	font-weight: bold;
-	text-align: center;
-	&::before, &::after {
-		font-family: $symbol-font;
-		font-size: 1.6em;
-		color: $red;
+	> p {
+		font-family: $quote-font;
+		-webkit-font-smoothing: antialiased;
+		font-style: italic;
+		letter-spacing: .01rem;
+		word-wrap: break-word;
 	}
-	&::before { content: "“"; }
-	&::after { content: "”"; }
-  }
+
+	&.catchcopy {
+		border: none;
+		margin: 0 auto 20px;
+		padding: 0;
+		font-size: 1.4em;
+		font-weight: bold;
+		text-align: center;
+		&::before, &::after {
+			font-family: $symbol-font;
+			font-size: 1.6em;
+			color: $red;
+		}
+		&::before { content: "“"; }
+		&::after { content: "”"; }
+	}
 }
 
 .center {
 	text-align: center;
+	@include mq-sp {
+		text-align: left;
+	}
 }
 
 
@@ -160,40 +163,40 @@ blockquote {
 
 ol,
 ul {
-  margin: 0 0 1.3rem 2.5rem;
+	margin: 0 0 1.3rem 2.5rem;
 
-  li {
-    line-height: $line-height * 1.2;
-    margin: 0 0 .2rem;
-  }
+	li {
+		line-height: $line-height * 1.2;
+		margin: 0 0 .2rem;
+	}
 
-  ol,
-  ul {
-    margin: .1rem 0 .2rem 2rem;
-  }
+	ol,
+	ul {
+		margin: .1rem 0 .2rem 2rem;
+	}
 }
 
 ol {
-  list-style-type: decimal;
+	list-style-type: decimal;
 }
 
 ul {
-  list-style-type: disc;
+	list-style-type: disc;
 }
 
 .block-heading {
-  @include column(12);
-  bottom: -15px;
-  font-size: .8rem;
-  font-weight: bold;
-  letter-spacing: 1px;
-  position: relative;
-  text-align: center;
-  text-transform: uppercase;
+	@include column(12);
+	bottom: -15px;
+	font-size: .8rem;
+	font-weight: bold;
+	letter-spacing: 1px;
+	position: relative;
+	text-align: center;
+	text-transform: uppercase;
 }
 
 .label {
-  padding: 8px 18px 9px;
+	padding: 8px 18px 9px;
 }
 
 // ------------------------------
@@ -201,24 +204,24 @@ ul {
 // ------------------------------
 
 main {
-  bottom: 0;
-  left: 22.5rem;
-  position: absolute;
-  right: 0;
-  top: 0;
-  font-size: 16px;
+	bottom: 0;
+	left: 22.5rem;
+	position: absolute;
+	right: 0;
+	top: 0;
+	font-size: 16px;
 
-  > .content {
-	min-height: 100%;
-	height: 100%;
-    //margin: 0 3.7rem;
-    //padding: 2rem 0;
+	> .content {
+		min-height: 100%;
+		height: 100%;
+		//margin: 0 3.7rem;
+		//padding: 2rem 0;
 
-    > h1 {
-      margin-bottom: 2.7rem;
-    }
+		> h1 {
+			margin-bottom: 2.7rem;
+		}
 
-  }
+	}
 }
 
 
@@ -233,59 +236,54 @@ footer {
 	bottom: 0;
 }
 
-article.page {
-	section {
-		padding: 2rem;
-	}
-}
 
 article.post {
-	padding: 2rem;
+	padding: 20px 40px;
 }
 
 .divider {
-  border-top: 1px solid $divider-color;
-  margin: 10px auto;
+	border-top: 1px solid $divider-color;
+	margin: 10px auto;
 
-  &.long {
-    width: 30%;
-  }
+	&.long {
+		width: 30%;
+	}
 
-  &.short {
-    width: 15%;
-  }
+	&.short {
+		width: 15%;
+	}
 
-  &.post {
-    border-top: 1px solid $gray-light;
-    margin: 1.7rem 0;
-    width: 30%;
-  }
+	&.post {
+		border-top: 1px solid $gray-light;
+		margin: 1.7rem 0;
+		width: 30%;
+	}
 }
 
 .container {
-  margin: 0 auto;
-  position: relative;
-  width: $total-width - $gutter-width;
+	margin: 0 auto;
+	position: relative;
+	width: $total-width - $gutter-width;
 }
 
 .copyright {
-  display: block;
-  margin-bottom: .7em;
-  text-align: center;
+	display: block;
+	margin-bottom: .7em;
+	text-align: center;
 
-  a {
-    color: lighten($gray-dark, 5%);
-    text-decoration: underline;
+	a {
+		color: lighten($gray-dark, 5%);
+		text-decoration: underline;
 
-    &:hover {
-      color: $hover-color;
-    }
-  }
+		&:hover {
+			color: $hover-color;
+		}
+	}
 }
 
 .emoji {
-  height: 1em !important;
-  margin: 0 .05em 0 .1em !important;
-  vertical-align: -.1em !important;
-  width: 1em !important;
+	height: 1em !important;
+	margin: 0 .05em 0 .1em !important;
+	vertical-align: -.1em !important;
+	width: 1em !important;
 }

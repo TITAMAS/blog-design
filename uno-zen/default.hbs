@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>{{meta_title}}</title>
-    {{> meta}}
-    <link rel="stylesheet" type="text/css" href="{{asset "css/uno-zen.css"}}" />
-    {{ghost_head}}
-  </head>
-  <body class="{{body_class}}">
-    <header id="menu-button" class="expanded">
-      <a><i class="icon icon-list"></i></a>
-    </header>
-    {{> aside}}
+<head>
+	<title>{{meta_title}}</title>
+	{{> meta}}
+	<link rel="stylesheet" type="text/css" href="{{asset "css/uno-zen.css"}}" />
+	{{ghost_head}}
+</head>
+<body class="{{body_class}}">
+	<header id="menu-button" class="expanded fixed-header">
+		<a><i class="icon icon-list"></i></a>
+	</header>
+	{{> aside}}
 
-    <main data-no-instant>
-      <section class="content">
-        {{{body}}}
-      </section>
-    </main>
+	<main data-no-instant>
+		<section class="content">
+			{{{body}}}
+		</section>
+	</main>
 	<script type="text/javascript">
-	  if (typeof jQuery == 'undefined') {
-	    document.write('<script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js"></'+'script>');
-	  }
+	if (typeof jQuery == 'undefined') {
+		document.write('<script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js"></'+'script>');
+	}
 	</script>
 	<script src="{{asset "js/uno-zen.common.js"}}" type="text/javascript" charset="utf-8"></script>
-    <script src="{{asset "js/unique.js"}}" type="text/javascript" charset="utf-8"></script>
-    {{#is "post, page"}}
-      <script src="{{asset "js/uno-zen.post.js"}}" type="text/javascript" charset="utf-8"></script>
-    {{/is}}
-    {{> google-analytics}}
-  </body>
+	<script src="{{asset "js/unique.js"}}" type="text/javascript" charset="utf-8"></script>
+	{{#is "post, page"}}
+	<script src="{{asset "js/uno-zen.post.js"}}" type="text/javascript" charset="utf-8"></script>
+	{{/is}}
+	{{> google-analytics}}
+</body>
 </html>
