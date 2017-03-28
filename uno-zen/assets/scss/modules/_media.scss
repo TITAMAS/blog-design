@@ -1,0 +1,20 @@
+$widthTab: 1024px;
+$widthSp: 480px;
+
+@mixin mq-pc {
+	@media screen and (min-width: $widthTab) {
+		@content;
+	}
+}
+
+@mixin mq-tab {
+	@media screen and (max-width: ($widthTab - 1px)) {
+		@content;
+	}
+}
+
+@mixin mq-sp {
+	@media (max-width: ($widthSp - 1px)) {
+		@content;
+	}
+}

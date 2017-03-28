@@ -13,6 +13,20 @@
 }
 
 // ------------------------------
+// > 1024px (PC)
+// ------------------------------
+
+
+@media screen and (min-width: $widthSp) {
+	header#fixed-header {
+		display: none;
+	}
+}
+
+
+
+
+// ------------------------------
 // < 1024px (Tablet)
 // ------------------------------
 
@@ -22,8 +36,38 @@
 		height: 56px;
 		width: 100%;
 		position: fixed;
-		background: #000;
+		background: #fff;
 		z-index: 1800;
+		.logo {
+			display: table;
+			margin: 8px auto;
+			width: 40px;
+		    height: 40px;
+		}
+	}
+
+	#menu-button {
+		position: fixed;
+		top: 0;
+		left: 12.85rem;
+		z-index: 2000;
+		display: block;
+		background: #000;
+		padding: 8px;
+		cursor: pointer;
+		transition: left $aside-animation-time $aside-animation;
+		&.expanded {
+			background: #fff;
+			left: 0;
+			height: 56px;
+		}
+		> a {
+			display: block;
+			> i {
+				color: $red;
+				padding: 0 8px;
+			}
+		}
 	}
 	aside {
 		min-height: 100%;
@@ -46,43 +90,19 @@
 		display: inherit;
 	}/* off canvas */
 
-	#menu-button {
-		position: fixed;
-		top: 0;
-		left: 12.85rem;
-		z-index: 2000;
-		display: block;
-		background: #000;
-		padding: 8px;
-		transition: all $aside-animation-time;
-
-		&.expanded {
-			background: #fff;
-			left: 0;
-			height: 56px;
-		}
-
-		> a {
-			display: block;
-			> i {
-				color: $red;
-				padding: 0 8px;
-			}
-		}
-	}
 
 	.cover {
-		width: 0;
+		width: 16rem;
+		transform: translate3d(-16rem, 0, 0);
 		transition: width $aside-animation-time $aside-animation,
 		transform $aside-animation-time $aside-animation,
 		box-shadow $aside-animation-time * 1.8 $aside-animation;
 		border-right: 0;
 		box-shadow: none;
-
+		z-index: 1900;
 		&.expanded {
 			width: 16rem;
 			transform: translate3d(0, 0, 0);
-			border-right: 1px solid $gray;
 			box-shadow: 11px -10px 1px -9px $gray-light;
 			max-height: 100vh;
 		}
@@ -153,12 +173,14 @@
 		&.right {
 			margin: 0;
 		}
-
 		&.left {
 			.links.item {
 				width: 100%;
 			}
 		}
+	}
+	footer {
+		position: relative;
 	}
 
 	main {
@@ -168,6 +190,7 @@
 		left: 0;
 		transition: all $aside-animation-time;
 		transform: translate3d(0, 0, 0);
+		overflow-y: scroll;
 
 		&.expanded {
 			transform: translate3d(14rem, 0, 0);
@@ -176,6 +199,18 @@
 
 	article.post {
 		padding: 0 5%;
+		header {
+			margin-top: 1.5rem;
+			.meta {
+				font-size: .7rem;
+			    margin: 0;
+			}
+		}
+		#post-title {
+			margin: .5rem 0 1.5rem;
+			font-size: 1.8rem;
+			line-height: 2.4rem;
+		}
 	}
 
 }
@@ -185,8 +220,6 @@
 // ------------------------------
 
 @media all and (max-width: $widthSp) {
-	.post .tags,
-	.post .meta > time,
 	.pagination > span {
 		display: none;
 	}
@@ -231,15 +264,23 @@
 	}
 
 	#posts-list {
-		margin: 3rem 0;
 		text-align: center;
 		> li {
-
+			a.listlink {
+				font-size: 28px !important;
+				line-height: 40px;
+				text-align: left;
+			}
 			> time {
 				display: block;
-				float: none;
 				letter-spacing: 1px;
 				padding: 0;
+				left: 5%;
+				bottom: 5%;
+			}
+			p.tags {
+				left: 5%;
+				bottom: 15%;
 			}
 		}
 	}
