@@ -203,9 +203,12 @@ body {
   font-family: "Gudea", sans-serif; }
 
 mark {
-  background: #feda9e;
+  background: rgba(49, 179, 180, 0.6);
   padding: .05em .2em;
   border-radius: 3px; }
+
+p > mark {
+  margin: 0.5rem; }
 
 ::selection {
   background: #8adfdf; }
@@ -1374,14 +1377,14 @@ input:not([type="submit"]):not([type="radio"]) {
       width: 100%; } }
 
 textarea {
-  width: 620px; }
+  width: 500px; }
   @media (max-width: 479px) {
     textarea {
       width: 100%; } }
 
 .inputs {
   display: inline-block;
-  max-width: 620px; }
+  width: 500px; }
 
 ::-webkit-input-placeholder {
   color: #BABABA;
@@ -2264,11 +2267,22 @@ html.expanded .navigation.left .links > li {
     #nameOrigin p > span {
       color: #31b3b4; }
 
-#contactForm .form-group {
-  margin-bottom: 8px; }
-  #contactForm .form-group label.title {
-    display: inline-block;
-    min-width: 160px;
-    vertical-align: top; }
-  #contactForm .form-group p {
-    margin-bottom: 0; }
+#contactForm {
+  width: 664px;
+  display: table;
+  margin: 0 auto; }
+  @media (max-width: 479px) {
+    #contactForm {
+      display: block;
+      min-width: 100%;
+      width: 100%; }
+      #contactForm .inputs {
+        width: 100%; } }
+  #contactForm .form-group {
+    margin-bottom: 8px; }
+    #contactForm .form-group label.title {
+      display: inline-block;
+      min-width: 160px;
+      vertical-align: top; }
+    #contactForm .form-group p {
+      margin-bottom: 0; }

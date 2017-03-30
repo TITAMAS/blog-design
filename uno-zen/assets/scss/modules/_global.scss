@@ -33,6 +33,9 @@ mark {
 	padding: .05em .2em;
 	border-radius: 3px;
 }
+p > mark {
+	margin: 0.5rem;
+}
 
 
 ::selection {

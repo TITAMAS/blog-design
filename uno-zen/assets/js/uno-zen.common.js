@@ -787,7 +787,6 @@
 				}
 			}
 		}
-
 		// IE10 with -ms-touch-action: none or manipulation, which disables double-tap-to-zoom (issue #97)
 		if (layer.style.msTouchAction === 'none' || layer.style.touchAction === 'manipulation') {
 			return true;
@@ -1722,7 +1721,7 @@ var InstantClick = function(document, location) {
         readingTimeTarget: '.post.reading-time > span'
       });
       Uno.linkify($('#post-content').children('h1, h2, h3, h4, h5, h6'));
-      $('.content').fitVids();
+	  $('.content').fitVids();
     }
     if (Uno.is('page', 'error')) {
       $('#panic-button').click(function() {

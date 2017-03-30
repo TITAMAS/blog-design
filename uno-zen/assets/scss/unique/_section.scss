@@ -29,6 +29,17 @@
 // ------------------------------
 
 #contactForm {
+    width: 664px;
+	display: table;
+	margin: 0 auto;
+	@include mq-sp {
+		display: block;
+		min-width: 100%;
+		width: 100%;
+		.inputs {
+			width: 100%;
+		}
+	}
 	.form-group {
 		margin-bottom: 8px;
 		label {
